@@ -18,5 +18,16 @@
   "clear": "Clear",
   "confirm": "Confirm",
   "selectAll": "Select All",
-  "deleteAll": "Delete All"
+  "deleteAll": "Delete All",
+  "mr": "Mr.",
+  "mrs": "Mrs.",
+  "ms": "Ms.",
+  "thai": "Thai",
+  "foreigner": "Foreigner",
+  "date": "Month/Day/Year",
+  "male": "Male",
+  "female": "Female",
+  "notSpecified": "Not Specified",
+  "name": "Name",
+  "manage": "Manage"
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Select, Space } from "antd";
+import { useTranslation } from "react-i18next";
 
 interface NationalityPickerProps {
   value: string;
@@ -14,6 +15,8 @@ const NationalityPicker: React.FC<NationalityPickerProps> = ({
     onChange(selectedValue);
   };
 
+  const { t } = useTranslation();
+
   return (
     <Space wrap>
       <Select
@@ -22,9 +25,8 @@ const NationalityPicker: React.FC<NationalityPickerProps> = ({
         style={{ width: 200 }}
         onChange={handleChange}
         options={[
-          { value: "พุทธ", label: "พุทธ" },
-          { value: "คริส", label: "คริส" },
-          { value: "อิสลาม", label: "อิสลาม" },
+          { value: t("thai"), label: t("thai") },
+          { value: t("foreigner"), label: t("foreigner") },
         ]}
       />
     </Space>

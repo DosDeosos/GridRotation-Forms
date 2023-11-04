@@ -1,6 +1,7 @@
 import React from "react";
 import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
+import { useTranslation } from "react-i18next";
 
 interface RadioPickerProps {
   value: string;
@@ -13,11 +14,13 @@ const RadioPicker: React.FC<RadioPickerProps> = ({ value, onChange }) => {
     onChange(newValue);
   };
 
+  const { t } = useTranslation();
+
   return (
     <Radio.Group onChange={handleChange} value={value}>
-      <Radio value="ผู้ชาย">ผู้ชาย</Radio>
-      <Radio value="ผู้หญิง">ผู้หญิง</Radio>
-      <Radio value="ไม่ระบุ">ไม่ระบุ</Radio>
+      <Radio value={t("male")}>{t("male")}</Radio>
+      <Radio value={t("female")}>{t("female")}</Radio>
+      <Radio value={t("notSpecified")}>{t("notSpecified")}</Radio>
     </Radio.Group>
   );
 };

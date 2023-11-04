@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { DatePickerProps } from "antd";
 import { DatePicker } from "antd";
 import { Dayjs } from "dayjs";
+import { useTranslation } from "react-i18next";
 
 const DateTable: React.FC<{
   value: Dayjs | null;
@@ -10,13 +11,15 @@ const DateTable: React.FC<{
   const [placement, SetPlacement] =
     useState<DatePickerProps["placement"]>("topLeft");
 
+  const { t } = useTranslation();
+
   return (
     <>
       <DatePicker
         value={value}
         onChange={onChange}
         placement={placement}
-        placeholder="เดือน/วัน/ปี"
+        placeholder={t("date")}
       />
     </>
   );

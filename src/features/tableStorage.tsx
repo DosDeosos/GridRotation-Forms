@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Form } from "../core/types/form";
 
+const tableDataFromLocalStorage = localStorage.getItem("tableData");
+let parsedTableData = [];
+if (tableDataFromLocalStorage) {
+  parsedTableData = JSON.parse(tableDataFromLocalStorage);
+}
+
 interface TableData {
-  key: string;
+  key: number;
   name: string;
   gender: string;
   phonenumber: string;
@@ -17,7 +23,7 @@ interface TableStorageState {
 
 const initialState: TableStorageState = {
   form: [],
-  table: [],
+  table: parsedTableData,
 };
 
 const tableSlice = createSlice({
@@ -29,12 +35,21 @@ const tableSlice = createSlice({
     },
     addToTable: (state, action) => {
       state.table.push(action.payload as TableData);
+      state.table = state.table.map((e, index) => ({ ...e, key: index }));
+      localStorage.setItem("tableData", JSON.stringify(state.table));
     },
     clearTableData: (state) => {
       state.table = [];
+      localStorage.removeItem("tableData");
+    },
+    deleteByIndex: (state, action) => {
+      state.table.splice(action.payload, 1);
+      state.table = state.table.map((e, index) => ({ ...e, key: index }));
+      localStorage.setItem("tableData", JSON.stringify(state.table));
     },
   },
 });
 
-export const { addForm, addToTable, clearTableData } = tableSlice.actions;
+export const { addForm, addToTable, clearTableData, deleteByIndex } =
+  tableSlice.actions;
 export default tableSlice.reducer;
