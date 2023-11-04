@@ -3,5 +3,20 @@
   "formsMenu": "การจัดการหน้าฟอร์ม",
   "moveShape": "เลื่อนรูปแบบ",
   "movePosition": "เปลี่ยนตำแหน่ง",
-  "tohomepage": "กลับหน้าหลัก"
+  "tohomepage": "กลับหน้าหลัก",
+  "formManagement": "การจัดการหน้าฟอร์ม",
+  "prefix": "คำนำหน้า",
+  "firstName": "ชื่อจริง",
+  "surname": "นามสกุล",
+  "birthdate": "วันเกิด",
+  "nationality": "สัญชาติ",
+  "IDCard": "เลขบัตรประชาชน",
+  "gender": "เพศ",
+  "phoneNumber": "หมายเลขโทรศัพท์มือถือ",
+  "passport": "หนังสือเดินทาง",
+  "expectSalary": "เงินเดือนที่คาดหวัง",
+  "clear": "ล้างข้อมูล",
+  "confirm": "ส่งข้อมูล",
+  "selectAll": "เลือกทั้งหมด",
+  "deleteAll": "ลบทั้งหมด"
 }

@@ -3,5 +3,20 @@
   "formsMenu": "Form & Table",
   "moveShape": "Move Shape",
   "movePosition": "Move Position",
-  "tohomepage": "Home Page"
+  "tohomepage": "Home Page",
+  "formManagement": "Form Management",
+  "prefix": "Prefix",
+  "firstName": "First Name",
+  "surname": "Surname",
+  "birthdate": "Birth Date",
+  "nationality": "Nationality",
+  "IDCard": "ID Card",
+  "gender": "Gender",
+  "phoneNumber": "Phone Number",
+  "passport": "Passport",
+  "expectSalary": "Expect Salary",
+  "clear": "Clear",
+  "confirm": "Confirm",
+  "selectAll": "Select All",
+  "deleteAll": "Delete All"
 }

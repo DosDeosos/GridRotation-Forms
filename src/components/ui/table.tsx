@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import { useTranslation } from "react-i18next";
 
 interface DataType {
   key: string;
@@ -12,23 +13,23 @@ interface DataType {
 
 const columns: ColumnsType<DataType> = [
   {
-    title: "Name",
+    title: "ชื่อ",
     dataIndex: "name",
   },
   {
-    title: "Gender",
+    title: "เพศ",
     dataIndex: "gender",
   },
   {
-    title: "Phone Number",
+    title: "หมายเลขโทรศัพท์มือถือ",
     dataIndex: "phonenumber",
   },
   {
-    title: "Nationality",
+    title: "สัญชาติ",
     dataIndex: "nationality",
   },
   {
-    title: "Manage",
+    title: "จัดการ",
     dataIndex: "manage",
   },
 ];
@@ -63,13 +64,15 @@ const TableSorting: React.FC = () => {
     },
   };
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="flex items-center ml-[6rem] mt-[2rem]">
         <input type="checkbox" checked={selectAll} onChange={handleSelectAll} />
-        <div className="ml-2 flex items-center">เลือกทั้งหมด</div>
+        <div className="ml-2 flex items-center">{t("selectAll")}</div>
         <button className="rounded-lg p-[6px] ml-2 border-2 bg-white">
-          ลบข้อมูล
+          {t("deleteAll")}
         </button>
       </div>
       <div className="mx-[6rem] my-4 ">

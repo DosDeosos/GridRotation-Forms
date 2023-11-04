@@ -10,8 +10,10 @@ import RadioPicker from "../components/ui/radiogroup";
 import TelephoneRegion from "../components/ui/telephoneregion";
 import TableSorting from "../components/ui/table";
 import { Form } from "../core/types/form";
+import { useTranslation } from "react-i18next";
 
 function FormsSheet() {
+  const { t } = useTranslation();
   const form = useSelector((state: RootState) => state.form);
   const table = useSelector((state: RootState) => state.table);
   const dispatch = useDispatch();
@@ -81,26 +83,26 @@ function FormsSheet() {
     <div className="background h-full overflow-auto">
       <div>
         <div>
-          <div className="ml-[4rem] text-[2rem]">การจัดการหน้าฟอร์ม</div>
+          <div className="ml-[4rem] text-[2rem]">{t("formManagement")}</div>
         </div>
         <div className="mt-6 mx-[28rem] border-2 border-black rounded-lg">
           <div className="m-4 flex-col">
             <div className="flex items-center pb-6">
               <div className="required text-[24px]">*</div>
-              <div className="px-2">คำนำหน้า:</div>
+              <div className="px-2">{t("prefix")}:</div>
               <Prefixer
                 value={form.prefix}
                 onChange={(e) => handleFormChange("prefix", e)}
               />
               <div className="required pl-2 text-[24px]">*</div>
-              <div className="px-2">ชื่อจริง:</div>
+              <div className="px-2">{t("firstName")}:</div>
               <input
                 className="rounded-md px-2 w-[18rem] h-[2rem]"
                 value={form.firstName}
                 onChange={(e) => handleFormChange("firstName", e.target.value)}
               />
               <div className="required pl-2 text-[24px]">*</div>
-              <div className="px-2">นามสกุล:</div>
+              <div className="px-2">{t("surname")}:</div>
               <input
                 className="rounded-md px-2 w-[18rem] h-[2rem]"
                 value={form.lastName}
@@ -109,7 +111,7 @@ function FormsSheet() {
             </div>
             <div className="flex items-center pb-6">
               <div className="required text-[24px]">*</div>
-              <div className="px-2">วันเกิด</div>
+              <div className="px-2">{t("birthdate")}</div>
               <div className="px-2">
                 <DateTable
                   value={form.birthDate}
@@ -117,14 +119,14 @@ function FormsSheet() {
                 />
               </div>
               <div className="required text-[24px]">*</div>
-              <div className="px-2">สัญชาติ</div>
+              <div className="px-2">{t("nationality")}</div>
               <NationalityPicker
                 value={form.nationality}
                 onChange={(e) => handleFormChange("nationality", e)}
               />
             </div>
             <div className="pb-6 px-2 flex items-center">
-              <div className="mr-4">เลขบัตรประชาชน: </div>
+              <div className="mr-4">{t("IDCard")}: </div>
               {[1, 2, 3, 4, 5].map((fieldNumber) => (
                 <React.Fragment key={fieldNumber}>
                   {fieldNumber === 1 && (
@@ -170,7 +172,7 @@ function FormsSheet() {
             </div>
             <div className="flex items-center pb-6">
               <div className="required text-[24px]">*</div>
-              <div className="px-2">เพศ:</div>
+              <div className="px-2">{t("gender")}:</div>
               <RadioPicker
                 value={form.gender}
                 onChange={(value) => handleFormChange("gender", value)}
@@ -178,9 +180,7 @@ function FormsSheet() {
             </div>
             <div className="flex pb-6">
               <div className="required text-[24px]">*</div>
-              <div className="flex items-center px-2">
-                หมายเลขโทรศัพท์มือถือ:
-              </div>
+              <div className="flex items-center px-2">{t("phoneNumber")}:</div>
               <TelephoneRegion
                 value={form.region}
                 onChange={(value) => handleFormChange("region", value)}
@@ -195,7 +195,7 @@ function FormsSheet() {
               />
             </div>
             <div className="flex item-center pb-6 px-2">
-              <div className="flex items-center">หนังสือเดินทาง:</div>
+              <div className="flex items-center">{t("passport")}:</div>
               <input
                 className="rounded-md mx-4 w-[18rem] h-[2rem] pl-4"
                 value={form.passport}
@@ -205,7 +205,7 @@ function FormsSheet() {
             <div className="flex justify-between items-center">
               <div className="flex items-center">
                 <div className="required text-[24px]">*</div>
-                <div className="px-2">เงินเดือนที่คาดหวัง:</div>
+                <div className="px-2">{t("expectSalary")}:</div>
                 <input
                   className="rounded-md mx-4 w-[18rem] h-[2rem] pl-4"
                   value={form.expectedSalary}
@@ -219,13 +219,13 @@ function FormsSheet() {
                   className="mr-6 border rounded-md p-2 bg-white"
                   onClick={clearInputFields}
                 >
-                  ล้างข้อมูล
+                  {t("clear")}
                 </button>
                 <button
                   className="mr-6 border rounded-md p-2 bg-white"
                   onClick={addDataToTable}
                 >
-                  ส่งข้อมูล
+                  {t("confirm")}
                 </button>
               </div>
             </div>
