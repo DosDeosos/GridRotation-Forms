@@ -86,18 +86,21 @@ function FormsSheet() {
         <div className="mt-6 mx-[28rem] border-2 border-black rounded-lg">
           <div className="m-4 flex-col">
             <div className="flex items-center pb-6">
-              <div className="px-2">* คำนำหน้า:</div>
+              <div className="required text-[24px]">*</div>
+              <div className="px-2">คำนำหน้า:</div>
               <Prefixer
                 value={form.prefix}
                 onChange={(e) => handleFormChange("prefix", e)}
               />
-              <div className="px-2">* ชื่อจริง:</div>
+              <div className="required pl-2 text-[24px]">*</div>
+              <div className="px-2">ชื่อจริง:</div>
               <input
                 className="rounded-md px-2 w-[18rem] h-[2rem]"
                 value={form.firstName}
                 onChange={(e) => handleFormChange("firstName", e.target.value)}
               />
-              <div className="px-2">* นามสกุล:</div>
+              <div className="required pl-2 text-[24px]">*</div>
+              <div className="px-2">นามสกุล:</div>
               <input
                 className="rounded-md px-2 w-[18rem] h-[2rem]"
                 value={form.lastName}
@@ -105,14 +108,16 @@ function FormsSheet() {
               />
             </div>
             <div className="flex items-center pb-6">
-              <div className="px-2">* วันเกิด</div>
+              <div className="required text-[24px]">*</div>
+              <div className="px-2">วันเกิด</div>
               <div className="px-2">
                 <DateTable
                   value={form.birthDate}
                   onChange={(e) => handleFormChange("birthDate", e)}
                 />
               </div>
-              <div className="px-2">* สัญชาติ</div>
+              <div className="required text-[24px]">*</div>
+              <div className="px-2">สัญชาติ</div>
               <NationalityPicker
                 value={form.nationality}
                 onChange={(e) => handleFormChange("nationality", e)}
@@ -163,16 +168,18 @@ function FormsSheet() {
                 </React.Fragment>
               ))}
             </div>
-            <div className="flex items-center pb-6 px-2">
-              <div className="pr-4">* เพศ:</div>
+            <div className="flex items-center pb-6">
+              <div className="required text-[24px]">*</div>
+              <div className="px-2">เพศ:</div>
               <RadioPicker
                 value={form.gender}
                 onChange={(value) => handleFormChange("gender", value)}
               />
             </div>
-            <div className="flex pb-6 px-2">
-              <div className="flex items-center mr-4">
-                * หมายเลขโทรศัพท์มือถือ:
+            <div className="flex pb-6">
+              <div className="required text-[24px]">*</div>
+              <div className="flex items-center px-2">
+                หมายเลขโทรศัพท์มือถือ:
               </div>
               <TelephoneRegion
                 value={form.region}
@@ -197,7 +204,8 @@ function FormsSheet() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center">
-                <div className="px-2">* เงินเดือนที่คาดหวัง:</div>
+                <div className="required text-[24px]">*</div>
+                <div className="px-2">เงินเดือนที่คาดหวัง:</div>
                 <input
                   className="rounded-md mx-4 w-[18rem] h-[2rem] pl-4"
                   value={form.expectedSalary}

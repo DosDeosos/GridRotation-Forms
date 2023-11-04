@@ -1,3 +1,7 @@
 .background {
   @apply bg-gradient-to-r from-[#6eda78] to-[#ffa200];
 }
+
+.required {
+  @apply text-red-600;
+}
