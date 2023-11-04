@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { useTranslation } from "react-i18next";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../app/store";
 
 interface DataType {
   key: string;
@@ -14,7 +16,7 @@ interface DataType {
 const columns: ColumnsType<DataType> = [
   {
     title: "ชื่อ",
-    dataIndex: "name",
+    dataIndex: "firstName",
   },
   {
     title: "เพศ",
@@ -45,7 +47,9 @@ const data = [
 ];
 
 const TableSorting: React.FC = () => {
-  const [tableData, setTableData] = useState<DataType[]>(data);
+  const table = useSelector((state: RootState) => state.table);
+  const [tableData, setTableData] = useState<DataType[]>(table.table);
+  // console.log(object);
 
   const handleSelectAll = (e: any) => {
     const allRowKeys = tableData.map((item) => item.key);
@@ -79,7 +83,7 @@ const TableSorting: React.FC = () => {
         <Table
           rowSelection={rowSelection}
           columns={columns}
-          dataSource={tableData}
+          dataSource={table.table}
         />
       </div>
     </div>

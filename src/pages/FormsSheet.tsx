@@ -81,6 +81,7 @@ function FormsSheet() {
 
   return (
     <div className="background h-full overflow-auto">
+      {JSON.stringify(table)}
       <div>
         <div>
           <div className="ml-[4rem] text-[2rem]">{t("formManagement")}</div>
