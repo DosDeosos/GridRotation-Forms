@@ -37,7 +37,6 @@ const TableSorting: React.FC = () => {
     _2,
     sorter: any
   ) => {
-    console.log("Various parameters", sorter);
     setSortedInfo(sorter as SorterResult<DataType>);
   };
 
