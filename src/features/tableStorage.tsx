@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Form } from "../core/types/form";
+import { Dayjs } from "dayjs";
 
 const tableDataFromLocalStorage = localStorage.getItem("tableData");
 let parsedTableData = [];
@@ -9,11 +10,17 @@ if (tableDataFromLocalStorage) {
 
 interface TableData {
   key: number;
-  name: string;
+  prefix: string;
+  firstName: string;
+  lastName: string;
+  birthDate: Dayjs | null;
+  nationality: string | any;
+  idCard: string;
   gender: string;
-  phonenumber: string;
   region: string;
-  nationality: string;
+  phoneNumber: string;
+  passport: string;
+  expectedSalary: string;
 }
 
 interface TableStorageState {

@@ -26,8 +26,8 @@
   "foreigner": "ต่างชาติ",
   "date": "เดือน/วัน/ปี",
   "male": "ผู้ชาย",
-  "female": "ผู้ชาย",
-  "notSpecified": "ผู้ชาย",
+  "female": "ผู้หญิง",
+  "notSpecified": "ไม่ระบุ",
   "name": "ชื่อ",
   "manage": "จัดการ"
 }
