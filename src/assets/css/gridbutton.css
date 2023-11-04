@@ -1,0 +1,40 @@
+.square {
+  width: 150px;
+  height: 150px;
+  background: gray;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.oval {
+  width: 200px;
+  height: 100px;
+  background: gray;
+  border-radius: 100px / 50px;
+}
+
+.trapezoid {
+  border-bottom: 100px solid gray;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 190px;
+}
+
+.rectangle {
+  width: 200px;
+  height: 100px;
+  background: gray;
+}
+
+.parallelogram {
+  width: 150px;
+  height: 100px;
+  transform: skew(20deg);
+  background: gray;
+}
